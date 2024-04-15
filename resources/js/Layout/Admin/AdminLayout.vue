@@ -39,10 +39,10 @@ import "/public/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js";
 // import "/public/assets/demo/demo3/base/scripts.bundle.js" 
 // import "/public/assets/vendors/custom/fullcalendar/fullcalendar.bundle.js"
 // import "/public/assets/vendors/custom/gmaps/gmaps.js"
-import "/public/assets/app/custom/general/dashboard.js"
+// import "/public/assets/app/custom/general/dashboard.js"
 // import "/public/assets/vendors/general/chart.js/dist/Chart.bundle.js"
 // import "/public/assets/app/bundle/app.bundle.js"
-
+ 
 import "https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js" 
 		 
     WebFont.load({

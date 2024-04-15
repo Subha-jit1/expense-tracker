@@ -1,11 +1,17 @@
 import './bootstrap';
 import { createApp, h } from 'vue'
-import { createInertiaApp } from '@inertiajs/vue3'
+import { createInertiaApp, Link, router } from '@inertiajs/vue3'
 import { defineAsyncComponent } from 'vue'
+import { ZiggyVue } from 'ziggy-js';
+import { Ziggy } from './ziggy';
 
 
 const AdminLayout = defineAsyncComponent(() => 
   import('./Layout/Admin/AdminLayout.vue')
+)
+
+const AuthLayout = defineAsyncComponent(() => 
+  import('./Layout/Admin/AuthLayout.vue')
 )
 
 
@@ -18,11 +24,17 @@ createInertiaApp({
       page.default.layout = AdminLayout
     }
 
+    if (name.startsWith('Admin/Auth')) {
+      page.default.layout = AuthLayout
+    }
+
     return page
   },
   setup({ el, App, props, plugin }) {
     createApp({ render: () => h(App, props) })
       .use(plugin)
+      .use(ZiggyVue, Ziggy)
+      .component('Link',Link)
       .mount(el)
   },
 })
