@@ -18,12 +18,11 @@
                     </label>
                 </div>
                 <div class="col kt-align-right">
-                    <Link :href="route('admin.dashboard')" id="kt_login_forgot" class="kt-link kt-login__link">Forget Password ?</Link>
-
+                    <Link :href="route('admin.forgot')" id="kt_login_forgot" class="kt-link kt-login__link">Forget Password ?</Link>
                 </div>
             </div>
             <div class="kt-login__actions">
-                <button id="kt_login_signin_submit" class="btn btn-pill kt-login__btn-primary">Sign In</button>
+                <button id="kt_login_signin_submit"  class="btn btn-pill kt-login__btn-primary">Sign In</button>
             </div>
         </form>
     </div>

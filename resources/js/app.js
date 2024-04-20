@@ -2,7 +2,7 @@ import './bootstrap';
 import { createApp, h } from 'vue'
 import { createInertiaApp, Link, router } from '@inertiajs/vue3'
 import { defineAsyncComponent } from 'vue'
-import { ZiggyVue } from 'ziggy-js';
+import { ZiggyVue } from 'ziggy-js';  
 import { Ziggy } from './ziggy';
 
 
@@ -33,8 +33,9 @@ createInertiaApp({
   setup({ el, App, props, plugin }) {
     createApp({ render: () => h(App, props) })
       .use(plugin)
-      .use(ZiggyVue, Ziggy)
+      .use(ZiggyVue)
       .component('Link',Link)
       .mount(el)
   },
 })
+ 

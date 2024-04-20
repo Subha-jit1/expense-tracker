@@ -1,22 +1,24 @@
 <template>
     <div class="kt-grid kt-grid--ver kt-grid--root" style="height: 100vh;">
-			<div class="kt-grid kt-grid--hor kt-grid--root kt-login kt-login--v2 kt-login--signin" id="kt_login">
+			<div class="kt-grid kt-grid--hor kt-grid--root kt-login kt-login--v2 kt-login--signin" :class="{'kt-login--signin': $page?.props.current_url == route('admin.signin'), 'kt-login--signup': $page?.props.current_url == route('admin.signup'), 'kt-login--forgot': $page?.props.current_url == route('admin.forgot')}"  id="kt_login">
+ 
 				<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" style="background-image: url(/assets/media//bg/bg-1.jpg);">
 					<div class="kt-grid__item kt-grid__item--fluid kt-login__wrapper">
 						<div class="kt-login__container">
 							<div class="kt-login__logo">
-								<a href="#">
-									<img src="/public/assets/media/logos/logo-mini-2-md.png">
+                                <a href="#">
+                                    <img src="/public/assets/media/logos/logo-mini-2-md.png">
 								</a>
 							</div>
+                            
                             <SignIn/>
-                            <SignUp/>
+                            <SignUp/>   
                             <ForgotPassword/>
                             <div class="kt-login__account">
                                 <span class="kt-login__account-msg">
                                     Don't have an account yet ?
                                 </span>&nbsp;&nbsp;
-                                <a href="javascript:;" id="kt_login_signup" class="kt-link kt-link--light kt-login__account-link">Sign Up</a>
+                                <Link :href="route('admin.signup')" id="kt_login_signup" class="kt-link kt-link--light kt-login__account-link">Sign Up</Link>
                             </div>
                         </div>
                     </div>
@@ -53,6 +55,24 @@ import '/public/assets/vendors/general/js-cookie/src/js.cookie.js';
 import '/public/assets/vendors/general/wnumb/wNumb.js';
 // import '/public/assets/app/custom/login/login-general.js';
 
+const getLoginPage = (route) => {
+
+     if(route == route('admin.signin'))
+     {
+        return 'kt-login--v2 kt-login--signin';
+     }
+     else if(route == route('admin.signup'))
+     {
+        return 'kt-login--v2 kt-login--signup';
+     }
+     else
+     {
+          return 'kt-login--v2 kt-login--signup';
+     }
+
+}
+
+ 
 
 </script>
 
@@ -61,3 +81,4 @@ import '/public/assets/vendors/general/wnumb/wNumb.js';
 @import '/public/assets/demo/default/base/style.bundle.css';
 @import '/public/assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css';
 </style>
+

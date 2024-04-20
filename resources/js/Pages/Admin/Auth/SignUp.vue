@@ -28,7 +28,7 @@
             </div>
             <div class="kt-login__actions">
                 <button id="kt_login_signup_submit" class="btn btn-pill kt-login__btn-primary">Sign Up</button>&nbsp;&nbsp;
-                <button id="kt_login_signup_cancel" class="btn btn-pill kt-login__btn-secondary">Cancel</button>
+                <Link :href="route('admin.signin')" id="kt_login_signup_cancel" class="btn btn-pill kt-login__btn-secondary">Cancel</Link>
             </div>
         </form>
     </div>
